@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Styling for the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Website name/logo styling */
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        /* Styling for the page content */
+        .about-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+            color: white;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .about-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-container p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Styling for the team section */
+        .team {
+            margin-top: 50px;
+        }
+
+        .team h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            background-color: rgba(0, 0, 0, 0.6); /* Translucent background */
+            padding: 20px;
+            margin: 10px; /* Spacing between boxes */
+            border-radius: 8px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .team-member p {
+            color: white;
+            font-style: italic;
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 768px) {
+            .team-member {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-member {
+                width: 100%;
+            }
+        }
+
+        body {
+            background-image: url('travel.jpg');
+            background-size: cover; /* This ensures the image covers the entire background */
+            background-attachment: fixed; /* This keeps the background image fixed while scrolling */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Social media icons container */
+        .social-media {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            padding: 10px;
+        }
+
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="download.png" alt="Logo">
+            <a href="#">TravelBoom</a>
+        </div>
+        <div>
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact_us.html">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-media">
+        <a href="#"><img src="face.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="insta.png" alt="Instagram"></a>
+        <a href="#"><img src="you.png" alt="Youtube"></a>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-container">
+        <h1>About Our Company</h1>
+        <p>Welcome to TravelBoom, where we are dedicated to bring the outmost out of your each and every foreign trip. Our mission is to offer exciting travel packages at reasonable cost so that each and everyone can enjoy their time. We take pride in delivering exceptional services and products that meet the highest standards of quality and innovation.</p>
+        <p>Founded in 2004, we have continuously grown and adapted to the ever-changing industry landscape. Our team of professionals is passionate about driving success for our clients and partners through dedication, creativity, and a commitment to excellence.</p>
+        <p>At TravelBoom, we believe in collaboration, trust, and transparency. Our goal is to build lasting relationships with our clients and deliver results that exceed their expectations.</p>
+
+        <!-- Team Section -->
+        <div class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="download (3).jpeg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Chief Executive Officer</p>
+                    
+                </div>
+                <div class="team-member">
+                    <img src="download (3).jpeg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Chief Operating Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="download (3).jpeg" alt="Team Member 3">
+                    <h3>Emily Johnson</h3>
+                    <p>Chief Financial Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="download (3).jpeg" alt="Team Member 4">
+                    <h3>Michael Brown</h3>
+                    <p>Chief Marketing Officer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

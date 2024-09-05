@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Website</title>
+    <link rel="stylesheet" href="travel_recommendation.css">
+    <style>
+        body {
+            background-image: url('travel.jpg');
+            background-size: cover;
+            color: #282dc3;
+            font-family: Arial, sans-serif;
+        }
+        .main-content {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .social-media-box {
+            width: 60px;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            box-shadow: none;
+        }
+        .social-media-box img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: block;
+        }
+        .description-box {
+            flex: 1;
+            margin-left: 80px;
+        }
+        .search-results-box {
+            width: 80%;
+            margin-top: 20px;
+        }
+        
+        .card {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-align: center; /* Center the content */
+    display: inline-block; /* Keep the cards block elements */
+    width: 100%; /* Full width inside the container */
+}
+
+.card img {
+    width: 40%; /* Make image take full width of card */
+    height: auto; /* Auto height to maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.card h2 {
+    font-size: 18px;
+    margin:10px 0 5px; /* Adjust margin to fit between image and text */
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+        form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .search-button, .clear-button {
+            width: 100px;
+            margin-left: 5px;
+        }
+        .clear-button {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="download.png" alt="Logo">
+                <a href="#">TravelBoom</a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about_us.html">About us</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+            <form id="searchForm">
+                <input class="search-bar" type="text" placeholder="Search..." id="searchInput">
+                <button class="search-button" type="submit">Search</button>
+                <button class="clear-button" type="button" id="clearButton">Clear</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="main-content">
+        <div class="social-media-box">
+            <a href="#"><img src="face.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="insta.png" alt="Instagram"></a>
+            <a href="#"><img src="you.png" alt="Youtube"></a>
+        </div>
+        <div class="description-box">
+            <div class="translucent-box">
+                <h1>EXPLORE DREAM DESTINATION</h1>
+                <p> It encourages exploration off unfamiliar territories embracing landscapeand culture while pursuing desired destination and ignites a sense of wonder.</p>
+            </div>
+        </div>
+        <div class="search-results-box" id="travel-container">
+            <!-- Travel Recommendations Container -->
+        </div> 
+    </section>
+</main>
+
+
+<script>
+    let travelData = [];
+
+    // Fetch the JSON data using the Fetch API
+    fetch('travel_recommendation_api.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            travelData = data; // Store the fetched data
+            console.log(data); // Logs the JSON data to the console
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+
+    // Function to display travel recommendations
+   // Function to display travel recommendations
+function displayTravelRecommendations(data) {
+    const container = document.getElementById('travel-container');
+    container.innerHTML = ''; // Clear previous content
+
+    if (data.length === 0) {
+        container.innerHTML = '<p>No results found.</p>';
+        return;
+    }
+
+    data.forEach(item => {
+        // Create card elements
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        // Add place image
+        const img = document.createElement('img');
+        img.src = item.imageUrl; // Use your own image file path here
+        img.alt = item.name;
+
+        // Add place name
+        const placeName = document.createElement('h2');
+        placeName.textContent = item.name;
+
+        // Add place description
+        const description = document.createElement('p');
+        description.textContent = item.description;
+
+        // Append the image, name, and description to the card
+        card.appendChild(img);
+        card.appendChild(placeName);
+        card.appendChild(description);
+
+        // Append the card to the container
+        container.appendChild(card);
+    });
+}
+
+    
+
+    // Function to get current date and time for France, India, and the USA
+    function logTimeForCountries() {
+        const options = { timeZone: '', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+        
+        // India
+        options.timeZone = 'Asia/Kolkata';
+        const indiaTime = new Intl.DateTimeFormat('en-US', options).format(new Date());
+        console.log(`Current time in India: ${indiaTime}`);
+
+        // USA
+        options.timeZone = 'America/New_York';
+        const usaTime = new Intl.DateTimeFormat('en-US', options).format(new Date());
+        console.log(`Current time in USA: ${usaTime}`);
+
+        // France
+        options.timeZone = 'Europe/Paris';
+        const franceTime = new Intl.DateTimeFormat('en-US', options).format(new Date());
+        console.log(`Current time in France: ${franceTime}`);
+    }
+
+    // Function to filter and display search results
+    function filterTravelRecommendations(query) {
+        const filteredData = travelData.filter(item => 
+            item.name.toLowerCase().includes(query.toLowerCase()) ||
+            item.description.toLowerCase().includes(query.toLowerCase())
+        );
+        displayTravelRecommendations(filteredData); // Display the filtered results
+        logTimeForCountries(); // Log the time when search is performed
+    }
+
+    // Add event listener to the form submission
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form from submitting
+
+        const query = document.getElementById('searchInput').value.trim();
+        const container = document.getElementById('travel-container');
+        
+        if (query) {
+            filterTravelRecommendations(query); // Filter recommendations based on user input
+            container.style.display = 'block'; // Show the container with the filtered results
+        } else {
+            container.style.display = 'none'; // Hide the container if no query is entered
+        }
+    });
+
+    // Add event listener to the clear button
+    const clearButton = document.getElementById('clearButton');
+    clearButton.addEventListener('click', () => {
+        document.getElementById('searchInput').value = ''; // Clear the search input
+        const container = document.getElementById('travel-container');
+        container.style.display = 'none'; // Hide the search results container
+    });
+</script>
+
+
+</body>
+</html>

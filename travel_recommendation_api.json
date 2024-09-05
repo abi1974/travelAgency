@@ -1,0 +1,119 @@
+[
+    {
+        "name": "Paris",
+        "description": "The capital of France, known for its art, fashion, and culture.",
+        "imageUrl": "paris.jpeg",
+        "category": "country"
+    },
+    {
+        "name": "Tokyo",
+        "description": "The bustling capital of Japan, famous for its modern architecture and cuisine.",
+        "imageUrl": "japan.jpeg",
+        "category": "country"
+    },
+    {
+        "name": "New Delhi",
+        "description": "The capital of India, known for its rich history, culture, and landmarks like the Red Fort and India Gate.",
+        "imageUrl": "delhi.jpeg",
+        "category": "country"
+    },
+    {
+        "name": "Agra",
+        "description": "A city in India famous for the Taj Mahal, one of the Seven Wonders of the World.",
+        "imageUrl": "agra.jpeg"
+        
+    },
+    {
+        "name": "New York City",
+        "description": "A major city in the USA, known for landmarks like the Statue of Liberty, Times Square, and Central Park.",
+        "imageUrl": "new.jpeg"
+        
+    },
+    {
+        "name": "Los Angeles",
+        "description": "A sprawling city in the USA, famous for Hollywood and its entertainment industry.",
+        "imageUrl": "los.jpeg",
+        "category": "country"
+    },
+    {
+        "name": "Beijing",
+        "description": "The capital of China, home to the iconic Great Wall and the Forbidden City.",
+        "imageUrl": "beijing.jpeg"
+    },
+    {
+        "name": "Shanghai",
+        "description": "A global financial hub in China, known for its modern skyline and vibrant culture.",
+        "imageUrl": "shanghai.jpeg"
+    },
+    {
+        "id": 1,
+        "name": "Maldives",
+        "description": "A tropical paradise known for its crystal-clear waters and beautiful coral reefs.",
+        "imageUrl": "maldives.jpeg",
+        "category": "beach"
+    },
+    {
+        "id": 2,
+        "name": "Bora_Bora",
+        "description": "An island in French Polynesia famous for its turquoise lagoon and overwater bungalows.",
+        "imageUrl": "bora bora.jpeg",
+        "category": "beach"
+    },
+    {
+        "id": 3,
+        "name": "Phuket",
+        "description": "A popular island destination in Thailand with beautiful beaches and vibrant nightlife.",
+        "imageUrl": "phuket.jpeg",
+        "category": "beach"
+    },
+    {
+        "id": 4,
+        "name": "Angkor Wat",
+        "description": "A massive temple complex in Cambodia known for its stunning architecture and historical significance.",
+        "imageUrl": "angorwat.jpeg",
+        "category": "temple"
+    },
+    {
+        "id": 5,
+        "name": "Golden Temple",
+        "description": "A sacred Sikh temple located in Amritsar, India, renowned for its stunning golden architecture.",
+        "imageUrl": "golden.jpeg",
+        "category": "temple"
+    },
+    {
+        "id": 6,
+        "name": "Shwedagon Pagoda",
+        "description": "An iconic Buddhist temple in Yangon, Myanmar, famous for its golden stupa.",
+        "imageUrl": "sh.jpeg",
+        "category": "temple"
+    },
+    {
+        "id": 7,
+        "name": "France",
+        "description": "A country known for its rich history, culture, and landmarks such as the Eiffel Tower and Louvre Museum.",
+        "imageUrl": "paris.jpeg",
+        "category": "country"
+    },
+    {
+        "id": 8,
+        "name": "Japan",
+        "description": "A country with a blend of traditional and modern attractions, including temples, cherry blossoms, and technology.",
+        "imageUrl": "japan.jpeg",
+        "category": "country"
+    },
+    {
+        "id": 9,
+        "name": "Italy",
+        "description": "Famous for its historical sites, delicious cuisine, and beautiful landscapes, including cities like Rome and Venice.",
+        "imageUrl": "iitaly.jpeg",
+        "category": "country"
+    },
+    {
+        "id": 10,
+        "name": "Greece",
+        "description": "Known for its ancient history, stunning islands, and vibrant culture, including landmarks like the Parthenon.",
+        "imageUrl": "greece.jpeg",
+        "category": "country"
+    }
+   
+]
